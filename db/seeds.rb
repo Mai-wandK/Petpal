@@ -11,7 +11,7 @@ require "faker"
 
 
 10.times do
-  Petsitter.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number, description: Faker::Lorem.words(number: 10))
+  Petsitter.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number, description: Faker::Quote.matz)
 end
 
 puts "done"
