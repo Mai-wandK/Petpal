@@ -1,6 +1,20 @@
 <h1>Petsitters</h1>
-<ul>
-<% @petsitters.each do |petsitter| %>
-<li><%= petsitter.first_name%></li>
+
+<% if @petsitters.present? %>
+  <ul>
+  <% @petsitters.each do |petsitter| %>
+  <li><%= petsitter.first_name%></li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>No results found.</p>
 <% end %>
-</ul>
+
+<%= form_tag(petsitters_path, :method => "get") do %>
+<div class="input-group">
+  <%= search_field_tag :search, params[:search], placeholder: "Type ", class: "form-control" %>
+  <div class="input-group-btn">
+    <%= button_tag "Search for petsitter", :class => 'btn btn-info glyphicon glyphicon-search',:name=> nil%>
+  </div>
+</div>
+<% end %>

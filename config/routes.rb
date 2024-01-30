@@ -12,6 +12,4 @@ Rails.application.routes.draw do
   resources :petsitters, only: %i[index show new create edit update] do
     resources :bookings, only: %i[show edit update]
   end
-  # Defines the root path route ("/")
-  # root "posts#index"
 end

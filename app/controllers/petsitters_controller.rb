@@ -1,6 +1,10 @@
 class PetsittersController < ApplicationController
   def index
-    @petsitters = Petsitter.all
+    if params[:search].present?
+      @petsitters = Petsitter.where("first_name LIKE ?", "%#{params[:search]}%")
+    else
+      @petsitters = Petsitter.all
+    end
   end
 
   def show
