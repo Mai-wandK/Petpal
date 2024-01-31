@@ -12,9 +12,19 @@
 
 <%= form_tag(petsitters_path, :method => "get") do %>
 <div class="input-group">
-  <%= search_field_tag :search, params[:search], placeholder: "Type ", class: "form-control" %>
+  <%= search_field_tag :search, params[:search], placeholder: "Enter the location", class: "form-control" %>
+  <div> Cat:</div>
+  <%= check_box_tag :cat, params[:cat] %>
+  <div>Dog:</div>
+  <%= check_box_tag :dog, params[:dog] %>
+
   <div class="input-group-btn">
     <%= button_tag "Search for petsitter", :class => 'btn btn-info glyphicon glyphicon-search',:name=> nil%>
   </div>
 </div>
 <% end %>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
