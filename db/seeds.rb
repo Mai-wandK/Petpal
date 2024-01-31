@@ -9,7 +9,6 @@
 #   end
 require "faker"
 
-Petsitter.destroy_all
 puts "Seeding users..."
 Petsitter.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number, description: "Hey there! I'm a passionate petsitter, and I absolutely adore spending time with your furry pals. Whether it's playful antics with your dogs or cozy cuddles with your cats, I've got it covered!", photo:"1.png")
 
@@ -23,9 +22,7 @@ Petsitter.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.las
 
 Petsitter.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number, description: "Hi there! I'm not just a petsitter; I'm a pet-loving friend for your dogs and a soothing presence for your cats. Let's create a stress-free and enjoyable experience for your furry family members!", photo:"6.png")
 
-
 Petsitter.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number, description: "Trust me to be your go-to petsitter! I understand that dogs and cats have their own personalities, and I'm here to build a connection with each of them, making sure they feel secure and loved.", photo:"7.png")
-
 
 Petsitter.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number, description: "Hello, pet lovers! Offering more than just petsitting, I create a warm atmosphere that caters to the unique preferences of your dogs and cats, making their time with me a positive and enjoyable experience.", photo:"8.png")
 
