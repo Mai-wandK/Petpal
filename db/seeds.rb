@@ -9,7 +9,6 @@
 #   end
 require "faker"
 
-Petsitter.destroy_all
 puts "Seeding users..."
 Petsitter.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number, description: "Hey there! I'm a passionate petsitter, and I absolutely adore spending time with your furry pals. Whether it's playful antics with your dogs or cozy cuddles with your cats, I've got it covered!", photo:"1.png", address: "53 Junction Road, London W5 4XL")
 
