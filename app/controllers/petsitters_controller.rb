@@ -8,6 +8,12 @@ class PetsittersController < ApplicationController
       @petsitters = Petsitter.where("description LIKE ?", "%#{params[:dog]}%")
     elsif
       @petsitters = Petsitter.all
+      @markers = @petsitters.geocoded.map do |petsitter|
+        {
+          lat: petsitter.latitude,
+          lng: petsitter.longitude
+        }
+      end
     end
   end
 
