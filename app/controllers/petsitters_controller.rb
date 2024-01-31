@@ -3,9 +3,9 @@ class PetsittersController < ApplicationController
     # if params[:search].present?
     #   @petsitters = Petsitter.where("address LIKE ?", "%#{params[:search]}%")
     if params[:cat].present?
-      @petsitters = Petsitter.where("description LIKE ?", "%#{params[:cat]}%")
+      @petsitters = Petsitter.where("description LIKE ?", "%cats%")
     elsif params[:dog].present?
-      @petsitters = Petsitter.where("description LIKE ?", "%#{params[:dog]}%")
+      @petsitters = Petsitter.where("description LIKE ?", "%dogs%")
     elsif
       @petsitters = Petsitter.all
       @markers = @petsitters.geocoded.map do |petsitter|
