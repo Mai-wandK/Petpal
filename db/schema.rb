@@ -35,15 +35,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_31_113241) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude"  
-    t.float "longitude"
+    t.float "latitude"
     t.string "address"
-    t.text "photo"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
