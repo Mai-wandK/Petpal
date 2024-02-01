@@ -12,9 +12,8 @@ Rails.application.routes.draw do
     member do
       get 'profile'
     end
-    resources :bookings, only: %i[show new create edit update]
   end
   resources :petsitters, only: %i[index show new create edit update] do
-    resources :bookings, only: %i[show edit update]
+    resources :bookings, only: %i[show new create edit update]
   end
 end
