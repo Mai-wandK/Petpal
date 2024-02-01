@@ -8,9 +8,9 @@
 </div>
 
 
-<%= form_tag(petsitters_path, :method => "get") do %>
+<%= form_tag(petsitters_path, :method => "get", remote: true) do %>
 <div class="input-group">
-  <%= search_field_tag :search, params[:search], placeholder: "Enter the location", class: "form-control" %>
+  <%= search_field_tag :location, params[:location], placeholder: "Enter the location", class: "form-control" %>
   <div class="checkbox">
     <div> Cat:</div>
   <%= check_box_tag :cat, params[:cat] %>
@@ -25,7 +25,29 @@
 </div>
 <% end %>
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<% if flash[:alert] %>
+  <div class="alert alert-warning">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+  <!-- Map -->
+<div class = "results">
+  <div class = "map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <!-- Petsitter results -->
+  <div class="result-cards">
+    <% @petsitters.each do |petsitter| %>
+      <div class="result-card">
+        <%= image_tag(petsitter.photo, size: "120x120", alt: "Petsitter Photo") %>
+        <div class="result-card-infos">
+          <h3><%= petsitter.first_name %> <%= petsitter.last_name %></h3>
+          <p>Rate: <%= rand(10..30)%>$</p>
+        </div>
+      </div>
+    <% end%>
+  </div>
+</div>

@@ -6,6 +6,7 @@
   height: 100px;
   padding: 0px 50px;
   color: rgb(255, 255, 255);
+  margin-top: 20px;
 }
 .footer-links {
   display: flex;
@@ -22,3 +23,8 @@
   opacity: 1;
 }
 
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}

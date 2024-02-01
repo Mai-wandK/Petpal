@@ -13,6 +13,7 @@
 
   <body>
     <!-- Start of Navbar -->
+  <div class = "page-container">
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
         <%= link_to "#", class: "navbar-brand" do %>
@@ -50,9 +51,14 @@
       </div>
     </div>
   <!-- End of NavbaR -->
+
+  <!-- Start of Main Content -->
+  <div class="main-content">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+  </div>
+  <!-- End of Main Content -->
 
     <!-- Start of Footer -->
     <div class="footer">
@@ -67,7 +73,7 @@
         Copyright © 2024 PetPal, Inc.
       </div>
     </div>
-
+  </div>
   </body>
 
 </html>
