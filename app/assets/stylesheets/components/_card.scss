@@ -15,3 +15,44 @@
   margin-top: 15px;
   padding: 30px;
 }
+
+
+.card-group{
+  margin: 0 400px;
+  .card{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+  }
+}
+
+.profile{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .pic-bio{
+    display: flex;
+
+    align-items: center;
+    border: none;
+    border-radius: 60px;
+  }
+}
+
+.set-pic{
+  padding: 8px;
+  border-radius: 30px;
+}
+
+.full-card{
+  border: none;
+  border-radius: 9px;
+}
+
+.review-scn{
+  margin-top: 20px;
+}
