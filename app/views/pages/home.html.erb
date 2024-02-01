@@ -2,6 +2,23 @@
   <div class="container">
     <h1>Your Pet's Home Away from Home</h1>
     <p>Trustworthy Pet Sitting Services Tailored Just for You</p>
-    <button type="button" class="btn btn-primary">Learn more</button>
+    <%= link_to "Book now", petsitters_path, class: "btn btn-primary" %>
+
   </div>
+</div>
+
+<div>Meet some of our recent sitters</div>
+
+
+<div class="flex-box">
+  <% @petsitters.each do |petsitter| %>
+      <div class="card" style="width: 18rem;">
+          <%= image_tag petsitter.photo %>
+        <div class="card-body">
+              <h1 class="card-title"><%= petsitter.first_name %> <%= petsitter.last_name %></h1>
+              <p class="card-text"><%= petsitter.description %></p>
+          <%# <%= link_to 'Book Now', new_user_booking_path(user_id: current_user.id, petsitter_id: petsitter.id), class:"btn btn-success" %>
+      </div>
+      </div>
+  <% end %>
 </div>
