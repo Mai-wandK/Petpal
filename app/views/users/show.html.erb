@@ -3,12 +3,11 @@
     <div class="col-md-6 mb-4">
       <!-- Account Info Card -->
       <div class="card-container">
-        <h1>Account Info</h1>
         <div class="card-user">
           <img src="https://images.unsplash.com/photo-1632498301446-5f78baad40d0?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwb3duZXJ8ZW58MHx8MHx8fDA%3D" class="profile-pic" />
           <% if @user %>
             <div class="card-user-infos mt-3">
-              <p class="text-center"><strong>Emily</strong></p>
+              <p class="user-name text-center"><strong>Emily</strong></p>
               <p class="text-center location"><strong>London</strong> <span class="location-pin">📍</span></p>
               <p>Hello pet-loving community! I'm Emily, and my beloved four-legged companion is Max, the ultimate jetsetter pup. As we embark on our next adventure, I'm on the lookout for the perfect pet-sitter to provide a warm and loving home for Max while I'm away. If you're someone who understands the importance of cuddles, playtime, and a little wanderlust, join us in making sure Max has the best staycation ever! Your home could be the perfect pitstop for Max's vacation. Let's chat and ensure a tail-wagging experience</p>
             </div>
@@ -24,11 +23,11 @@
           <div class="card-booking">
             <div class="booking-header">
               <!-- Petsitter Avatar -->
-              <img src="<%= booking.petsitter.photo %>" alt="Petsitter Avatar" class="avatar" />
+              <%= image_tag booking.petsitter.photo, class: " avatar img-fluid" %>
               <!-- Booking Details -->
               <div class="booking-details">
                 <p>
-                  <h3>Booking <%= booking.id %> <button class="btn btn-warning">Pending</button></h3>
+                  <h3><%= booking.petsitter.first_name %> <button class="btn btn-warning">Pending</button></h3>
                 </p>
                 <p><strong>From:</strong> <%= booking.date_from %> <strong>to:</strong> <%= booking.date_to %></p>
                 <p>Message sent to <%= booking.petsitter.first_name %>: <%= booking.comment %></p>
