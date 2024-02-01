@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-vector/illustration-concept-with-people-with-pets_52683-30880.jpg?w=1060&t=st=1706711501~exp=1706712101~hmac=7b29fbb7c3b6b73caa029a08f56638577f7988cbb261a1f9c58248b818533a19);">
+  <div class="container">
+    <h1>Your Pet's Home Away from Home</h1>
+    <p>Trustworthy Pet Sitting Services Tailored Just for You</p>
+    <%= link_to "Book now", petsitters_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+<div>Meet some of our recent sitters</div>
+
+<div class="flex-box">
+  <% @petsitters.each do |petsitter| %>
+      <div class="card" style="width: 18rem;">
+          <%= image_tag petsitter.photo %>
+        <div class="card-body">
+              <h1 class="card-title"><%= petsitter.first_name %> <%= petsitter.last_name %></h1>
+              <p class="card-text"><%= petsitter.description %></p>
+              <%= link_to 'Book Now', new_user_session_path, class:"btn btn-success" %>
+      </div>
+      </div>
+  <% end %>
+</div>
