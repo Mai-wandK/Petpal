@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="profile-info container text-center">
   <div class="row justify-content-start">
     <div class="col-md-6 text-left">
       <h1>Account Info</h1>
@@ -8,7 +8,7 @@
         <div class="card-user-infos">
           <% if @user %>
             <p class="text-center">Emily</p>
-            <p>Location: London</p>
+            <p>London</p>
             <p>Hello pet-loving community! I'm Emily, and my beloved four-legged companion is Max, the ultimate jetsetter pup. As we embark on our next adventure, I'm on the lookout for the perfect pet-sitter to provide a warm and loving home for Max while I'm away. If you're someone who understands the importance of cuddles, playtime, and a little wanderlust, join us in making sure Max has the best staycation ever! Your home could be the perfect pitstop for Max's vacation. Let's chat and ensure a tail-wagging experience</p>
           <% end %>
         </div>
@@ -17,17 +17,16 @@
   </div>
 </div>
 
-<%= link_to "Contact now", "#", class: "btn btn-primary" %>
-
-
-<h2>Bookings:</h2>
-<ul>
-  <% @bookings.each do |booking| %>
-    <li>
-      <p>Booking ID: <%= booking.id %></p>
-      <p>Start Date: <%= booking.date_from %></p>
-      <p>End Date: <%= booking.date_to %></p>
-      <!-- Add more booking details here as needed -->
-    </li>
-  <% end %>
-</ul>
+<div class="booking-info container text-center">
+  <h2>Bookings:</h2>
+    <ul>
+      <% @bookings.each do |booking| %>
+        <li>
+          <p>Booking ID: <%= booking.id %></p>
+          <p>Start Date: <%= booking.date_from %></p>
+          <p>End Date: <%= booking.date_to %></p>
+          <p>Comment: <%= booking.comment %></p>
+        </li>
+      <% end %>
+    </ul>
+</div>
