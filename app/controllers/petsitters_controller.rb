@@ -1,19 +1,25 @@
 class PetsittersController < ApplicationController
   def index
-    # if params[:search].present?
-    #   @petsitters = Petsitter.where("address LIKE ?", "%#{params[:search]}%")
     if params[:cat].present?
       @petsitters = Petsitter.where("description LIKE ?", "%cats%")
       showmap(@petsitters)
     elsif params[:dog].present?
       @petsitters = Petsitter.where("description LIKE ?", "%dogs%")
       showmap(@petsitters)
+    elsif params[:location].present?
+      @petsitters = Petsitter.near(params[:location], 1)
+      if @petsitters.empty?
+        @petsitters = Petsitter.all
+        showmap(@petsitters)
+        flash.now[:alert] = "No petsitters found in this area"
+      else
+        showmap(@petsitters)
+      end
     else
       @petsitters = Petsitter.all
       showmap(@petsitters)
     end
   end
-
 
   def show
     @petsitter = Petsitter.find(params[:id])
