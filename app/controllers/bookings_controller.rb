@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.build(petsitter: @petsitter)
 
     if @booking.save
-      redirect_to user_booking_path(current_user, @booking), notice: 'Booking was created successfully!'
+      redirect_to profile_user_path(current_user), notice: 'Booking was created successfully!'
     else
       render :new
     end
