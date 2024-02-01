@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_31_113241) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_01_113532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +41,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_31_113241) do
     t.text "photo"
     t.boolean "cat"
     t.boolean "dog"
+    t.text "review"
+    t.text "review1"
+    t.text "review2"
+    t.string "rt"
   end
 
   create_table "users", force: :cascade do |t|

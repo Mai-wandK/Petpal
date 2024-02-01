@@ -9,12 +9,18 @@ class BookingsController < ApplicationController
 
   def create
     @petsitter = Petsitter.find(params[:petsitter_id])
-    @booking = current_user.bookings.build(petsitter: @petsitter)
-
+    @booking = Booking.new(booking_params)
+    @booking.petsitter = @petsitter
     if @booking.save
-      redirect_to user_booking_path(current_user, @booking), notice: 'Booking was created successfully!'
+      redirect_to user_path(current_user), notice: 'Booking was created successfully!'
     else
       render :new
     end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:date_from, :date_to, :comment, :user_id, :petsitter_id)
   end
 end

@@ -1,12 +1,39 @@
-
-
-<div class="card" style="width: 18rem;">
-    <%= image_tag @petsitter.photo %>
-  <div class="card-body">
-        <h1 class="card-title"><%= @petsitter.first_name %> <%= @petsitter.last_name %></h1>
-        <p class="card-text"><%= @petsitter.description %></p>
-    <%= link_to 'View details', new_user_booking_path(user_id: current_user.id, petsitter_id: @petsitter.id), class:"btn btn-success" %>
-
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+   <div class="d-flex profile">
+    <div class="card mb-3 full-card" style="width: 70vw;" >
+        <div class="row g-0 pic-bio">
+            <div class="col-md-4 set-pic" >
+               <%= image_tag @petsitter.photo, class:"img-fluid rounded-start"%>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= @petsitter.first_name %> <%= @petsitter.last_name %></h5>
+                <p class="card-text"><%= @petsitter.description %></p>
+                <p class="card-text"><small class="text-muted"> <%= link_to 'Book Now', new_petsitter_booking_path(petsitter_id: @petsitter.id), class:"btn btn-success"  %></p>
+              </div>
+            </div>
+          </div>
+         </div>
+    </div>
+</div>
+<div class="card-group review-scn">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @petsitter.rt %> </h5>
+      <p class="card-text"><%= @petsitter.review %></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @petsitter.rt %></h5>
+      <p class="card-text"><%= @petsitter.review1 %></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @petsitter.rt %></h5>
+      <p class="card-text"><%= @petsitter.review2 %></p>
+    </div>
   </div>
 </div>
 
