@@ -50,8 +50,10 @@
 
   <!-- Start of Main Content -->
   <div class="main-content">
+  <% if notice || alert %>
     <p class="notice  alert-light" role="alert"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </div>
   <!-- End of Main Content -->
