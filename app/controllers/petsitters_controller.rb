@@ -17,6 +17,10 @@ class PetsittersController < ApplicationController
     showmap(@petsitters, params[:location])
   end
 
+  def show
+    @petsitter = Petsitter.find(params[:id])
+  end
+
   private
 
   def find_petsitters_near(location)
@@ -27,10 +31,6 @@ class PetsittersController < ApplicationController
     else
       petsitters
     end
-  end
-
-  def show
-    @petsitter = Petsitter.find(params[:id])
   end
 
   def showmap(petsitters, _location)
