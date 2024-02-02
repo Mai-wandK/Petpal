@@ -26,7 +26,8 @@
 .map {
   width: 40%;
   height: 600px;
-  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
 }
 
 .result-cards {
@@ -35,13 +36,14 @@
   flex-direction: column;
   align-items: stretch;
   height: 600px;
-  margin-top: 2px;
 }
 
 .result-cards img {
   height: 100%;
   width: 120px;
   object-fit: cover;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .result-cards h2 {
@@ -58,16 +60,25 @@
   margin-top: 8px;
 }
 
-.result-cards .result-card-infos {
-  padding: 16px;
-}
-
 .result-card {
   display: flex;
   background: white;
   align-items: center;
-  border-radius: 4px;
-  margin-bottom: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  max-width: 600px;
+}
+
+.result-card-infos {
+  margin-left: 10px;
+}
+
+#mini-description {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 400px;
+    display: block;
+    overflow: hidden
 }
 
 #rate {
@@ -112,4 +123,33 @@
 .form-check-input:checked {
   background-color: #492E87;
   border-color: #492E87;
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.main-info img {
+  border-radius: 50%;
+}
+
+.main-info h3 {
+  font-size: 20px;
+  margin-left: 2px;
+}
+
+#window-btn {
+  background-color: #492E87;
+  border: 1px solid #492E87;
+  color: white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #2c1a56;
+    box-shadow: none;
+  }
 }

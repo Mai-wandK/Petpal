@@ -30,14 +30,8 @@
     </div>
   <% end %>
 
-    <!-- Map -->
   <div class = "results">
-    <div class = "map"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-    <!-- Petsitter results -->
+<!-- Petsitter results -->
     <div class="result-cards">
       <% @petsitters.each do |petsitter| %>
         <%= link_to petsitter_path(petsitter), id: "link" do %>
@@ -45,11 +39,20 @@
             <%= image_tag(petsitter.photo, size: "120x120", alt: "Petsitter Photo") %>
             <div class="result-card-infos">
               <h3><%= petsitter.first_name %> <%= petsitter.last_name %></h3>
+              <p id="mini-description"><%=petsitter.description%></p>
               <p>From <em id="rate"><%= rand(10..30)%>$</em> per hour</p>
             </div>
           </div>
         <% end%>
       <% end%>
     </div>
+<!-- End of Petsitter Results -->
+<!-- Map -->
+    <div class = "map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
   </div>
 </div>
+<!-- End of Map -->
