@@ -1,5 +1,6 @@
 .btn-primary {
   background-color: $pp-purple;
+  border-radius: 16px;
 }
 
 .btn {
@@ -26,6 +27,7 @@
   background-color: $pp-teal;
   color: white;
   font-family: 'Sniglet';
+  border-radius: 16px;
 
   &:hover {
     background-color: darken($pp-teal, 10%);
