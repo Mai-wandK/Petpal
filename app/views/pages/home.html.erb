@@ -26,7 +26,7 @@
         <h3 class="card-title"><%= petsitter.first_name %> <%= petsitter.last_name %></h3>
         <p class="card-text"><%= petsitter.short_description %></p>
         <div class="bnow-btn">
-          <%= link_to 'Book Now', new_petsitter_booking_path(petsitter_id: petsitter.id), class: "btn btn-success" %>
+          <%= link_to 'Book Now', petsitter_path(petsitter), class: "btn btn-success" %>
         </div>
       </div>
     </div>
