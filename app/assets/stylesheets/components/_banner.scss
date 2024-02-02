@@ -1,8 +1,9 @@
 .banner {
+  background-image: linear-gradient(rgba(131, 130, 130, 0.4),rgba(125, 124, 124, 0.4)), url('./banner_cat_and_dog.png');
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  background-image: asset-url("banner.png");
+  padding: 50px 0 150px 0;
+  // background-image: asset-url("banner.png");
 }
 
 .banner h1 {
