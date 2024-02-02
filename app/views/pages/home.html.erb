@@ -8,7 +8,7 @@
 </div>
 
 <div class="yellow-banner card-heading-hp">
-  <h2>Meet some of our recent sitters</h2>
+  <h2 style="font-weight:bold;">Meet some of our recent sitters</h2>
 </div>
 
 <div class="flex-box box-hm-pg">
@@ -19,7 +19,7 @@
         <h3 class="card-title"><%= petsitter.first_name %> <%= petsitter.last_name %></h3>
         <p class="card-text"><%= petsitter.short_description %></p>
         <div class="bnow-btn">
-          <%= link_to 'Book Now', petsitter_path(petsitter.id), class: "btn btn-success" %>
+          <%= link_to 'More info', petsitter_path(petsitter.id), class: "btn btn-success" %>
         </div>
       </div>
     </div>
@@ -30,16 +30,13 @@
   <%= link_to "Explore all petsitters", petsitters_path, class: "btn btn-primary"%>
 </div>
 
-
 <div class="yellow-banner card-heading-hp">
-  <h3>See what Petpal offers</h3>
+  <h2 style="font-weight:700;">See what Petpal offers</h2>
 </div>
-
 
 <div class="card-group service-hp">
   <div class="card">
     <%= image_tag "s1.png", width: 200, class:"card-img-top" %>
-
     <div class="card-body">
       <h5 class="card-title">Explore the PetPal Experience</h5>
       <p class="card-text">Embark on a journey to discover the unparalleled care and companionship offered by PetPal.</p>
@@ -61,11 +58,9 @@
   </div>
 </div>
 
-
 <div class="yellow-banner card-heading-hp">
-  <h3>Hear it from PetPal users</h3>
+  <h2 style="font-weight: 700">Hear it from PetPal users</h2>
 </div>
-
 
 <div class="card-group review-petpal">
   <div class="card review-homepage">
