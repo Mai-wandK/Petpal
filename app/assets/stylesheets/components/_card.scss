@@ -83,6 +83,7 @@
 .bnow-btn{
   display: flex;
   justify-content: center;
+
 }
 
 .review{
@@ -101,6 +102,10 @@
   border-radius: 15px;
   padding: 7px;
   margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 
   }
 
@@ -139,11 +144,33 @@
   }
 
   .review-petpal{
-    margin-bottom: 20px;
+    margin: 0 auto;
+    width: 80%;
   }
 
 .booking-form{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+
+.review-homepage{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 33%;
+}
+
+.card-footer{
+  width: 100%
+}
+
+.review-petpal{
+  margin-bottom: 40px;
+}
+
+
+.service-pix{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.6);
 }
