@@ -1,3 +1,8 @@
-<h2><%= "#{petsitter.first_name} #{petsitter.last_name}" %></h2>
-<p><%= petsitter.address %></p>
-<%= link_to "Go to #{petsitter.first_name} profile", petsitter_path(petsitter)%>
+<div class="pop-up-window">
+  <div class ="main-info">
+    <%= image_tag petsitter.photo, size: "50x50", alt: "Petsitter Photo" %>
+    <h3><%= "#{petsitter.first_name} #{petsitter.last_name}" %></h3>
+  </div>
+  <p><%= petsitter.address %></p>
+  <%= link_to "Go to profile", petsitter_path(petsitter), class: "btn btn-primary", id: "window-btn"%>
+</div>

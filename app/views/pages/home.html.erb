@@ -1,21 +1,108 @@
+
 <div class="banner">
+=======
+<!--
+  This is the home.html.erb file, which is responsible for rendering the home page of the Petpal application.
+  It contains HTML and ERB code to display a banner, introduce the pet sitting services, and showcase recent sitters.
+-->
+
+
   <div class="container">
     <h1>Your Pet's Home Away from Home</h1>
     <p>Trustworthy Pet Sitting Services Tailored Just for You</p>
     <%= link_to "Book now", petsitters_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="card-heading-hp">
+  <h2>Meet some of our recent sitters</h2>
+</div>
+
+<div class="flex-box box-hm-pg">
+  <% @petsitters.each do |petsitter| %>
+    <div class="card home-pg" style="width: 18rem;">
+      <%= image_tag petsitter.photo, class: "profile-img-hp" %>
+      <div class="card-body">
+        <h3 class="card-title"><%= petsitter.first_name %> <%= petsitter.last_name %></h3>
+        <p class="card-text"><%= petsitter.short_description %></p>
+        <div class="bnow-btn">
+          <%= link_to 'Book Now', new_petsitter_booking_path(petsitter_id: petsitter.id), class: "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div>
+      <button type="button" class="btn btn-light" class="fa-solid fa-greater-than">Find more petsitters</button>
+</div>
+
+
+<div class="card-heading-hp">
+  <h3>See what Petpal offers</h3>
+</div>
+
+
+<div class="card-group service-hp">
+  <div class="card">
+    <%= image_tag "s1.png", width: 200, class:"card-img-top" %>
+
+    <div class="card-body">
+      <h5 class="card-title">Explore the PetPal Experience</h5>
+      <p class="card-text">Embark on a journey to discover the unparalleled care and companionship offered by PetPal.</p>
     </div>
   </div>
-<div>Meet some of our recent sitters</div>
+  <div class="card">
+    <%= image_tag "s4.png", width: 200, class:"card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title">Unveil the PetPal Magic</h5>
+      <p class="card-text">Peek behind the curtain and witness the magic that happens when passion meets pet care at PetPal.</p>
+    </div>
+  </div>
+  <div class="card">
+    <%= image_tag "s2.png", width: 200, class:"card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title">PetPal: Where Every Pawprint Matters</h5>
+      <p class="card-text">See what PetPal has to offer, where every interaction, every service, is crafted to make a difference in your pets' lives.</p>
+    </div>
+  </div>
+</div>
 
-<div class="flex-box">
-  <% @petsitters.each do |petsitter| %>
-      <div class="card" style="width: 18rem;">
-          <%= image_tag petsitter.photo %>
-        <div class="card-body">
-              <h1 class="card-title"><%= petsitter.first_name %> <%= petsitter.last_name %></h1>
-              <p class="card-text"><%= petsitter.description %></p>
-              <%= link_to 'Book Now', new_user_session_path, class:"btn btn-success" %>
-      </div>
-      </div>
-  <% end %>
+
+<div class="card-heading-hp">
+  <h3>Hear it from PetPal users</h3>
+</div>
+
+
+<div class="card-group review-petpal">
+  <div class="card">
+    <div class="card-body">
+      <h6 class="card-title">Rating: ⭐⭐⭐⭐⭐</h6>
+      <h5 class="card-title">PetPal exceeded my expectations! </h5>
+      <p class="card-text">The attention to detail, from the initial meet-and-greet to the daily care routines, was impeccable. It's clear they genuinely care about pets. My dog, Max, is always thrilled to see his PetPal caretaker. Thank you for the excellent service!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Billie E., 1 day ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h6 class="card-title">Rating: ⭐⭐⭐⭐⭐</h6>
+      <h5 class="card-title">PetPal's team of caretakers is fantastic</h5>
+      <p class="card-text">They don't just feed and walk the pets; they truly connect with them. My two dogs, Bella and Rocky, were so well taken care of that I think they were a bit disappointed when I returned! I'm extremely grateful for the excellent service.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">lil W., 3 days ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h6 class="card-title">Rating: ⭐⭐⭐⭐⭐</h6>
+      <h5 class="card-title">PetPal is a lifesaver!</h5>
+      <p class="card-text">I had to go on an unexpected business trip, and they took care of my fur babies with so much love and attention. The daily photo updates were a nice touch, and I returned to happy, healthy pets. Highly recommend!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Jason B., 5 days ago</small>
+    </div>
+  </div>
 </div>
