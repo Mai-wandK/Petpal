@@ -1,8 +1,12 @@
-<div class="container">
-  <h1 class="text-center mt-4">Secure Your Pet's Perfect Match!</h1>
+<div class="container-bk">
 
-  <div id="booking-form" class="row justify-content-center">
-    <div class="col-sm-6">
+<div>
+
+
+  <div class="row justify-content-center">
+
+    <div class="col-sm-6 booking-form">
+    <h1 class="text-center mt-4">Secure Your Pet's Perfect Match!</h1>
       <%= simple_form_for [@petsitter, @booking] do |f| %>
 
       <div class="mb-3">
@@ -20,8 +24,15 @@
 
         <%= f.hidden_field :user_id, value: current_user.id %>
 
-        <%= f.submit 'Create Booking', class: 'btn btn-primary' %>
+        <div class="btn-light">
+        <%= f.submit 'Create Booking', class: "btn btn-success" %>
+        </div>
+
+
       <% end %>
     </div>
   </div>
+
+</div>
+
 </div>
