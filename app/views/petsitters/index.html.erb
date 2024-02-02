@@ -1,53 +1,58 @@
+<div class = "results-container">
+  <h1>Find your perfect Petsitter</h1>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-vector/illustration-concept-with-people-with-pets_52683-30880.jpg?w=1060&t=st=1706711501~exp=1706712101~hmac=7b29fbb7c3b6b73caa029a08f56638577f7988cbb261a1f9c58248b818533a19);">
-  <div class="container">
-    <h1>Your Pet's Home Away from Home</h1>
-    <p>Trustworthy Pet Sitting Services Tailored Just for You</p>
-    <button type="button" class="btn btn-primary">Learn more</button>
-  </div>
-</div>
-
-
-<%= form_tag(petsitters_path, :method => "get", remote: true) do %>
-<div class="input-group">
-  <%= search_field_tag :location, params[:location], placeholder: "Enter the location", class: "form-control" %>
-  <div class="checkbox">
-    <div> Cat:</div>
-  <%= check_box_tag :cat, params[:cat] %>
-  <div>Dog:</div>
-  <%= check_box_tag :dog, params[:dog] %>
-  </div>
-
-
-  <div class="input-group-btn">
-    <%= button_tag "Search for petsitter", :class => 'btn btn-info glyphicon glyphicon-search',:name=> nil%>
-  </div>
-</div>
-<% end %>
-
-<% if flash[:alert] %>
-  <div class="alert alert-warning">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
-
-  <!-- Map -->
-<div class = "results">
-  <div class = "map"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <!-- Petsitter results -->
-  <div class="result-cards">
-    <% @petsitters.each do |petsitter| %>
-      <div class="result-card">
-        <%= image_tag(petsitter.photo, size: "120x120", alt: "Petsitter Photo") %>
-        <div class="result-card-infos">
-          <h3><%= petsitter.first_name %> <%= petsitter.last_name %></h3>
-          <p>Rate: <%= rand(10..30)%>$</p>
+  <%= form_tag(petsitters_path, :method => "get", remote: true, class: "form-inline") do %>
+    <div class="input-group">
+      <%= search_field_tag :location, params[:location], placeholder: "Enter the location", class: "form-control" %>
+      <div class="checkbox">
+        <div class="form-check form-check-inline">
+          <div class="form-check form-check-inline">
+            <%= check_box_tag :cat, params[:cat], class: "form-check-input"%>
+            <label class="form-check-label">
+              <i class="fa-solid fa-cat fa-2xl" style="color: #0a9e8f;"></i>
+            </label>
+          </div>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= check_box_tag :dog, params[:dog], class: "form-check-input" %>
+          <label class="form-check-label">
+              <i class="fa-solid fa-dog fa-2xl" style="color: #0a9e8f;"></i>
+            </label>
         </div>
       </div>
-    <% end%>
+        <%= button_tag "Search for petsitter", id: "search-btn"%>
+    </div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="alert alert-warning">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <div class = "results">
+<!-- Petsitter results -->
+    <div class="result-cards">
+      <% @petsitters.each do |petsitter| %>
+        <%= link_to petsitter_path(petsitter), id: "link" do %>
+          <div class="result-card">
+            <%= image_tag(petsitter.photo, size: "120x120", alt: "Petsitter Photo") %>
+            <div class="result-card-infos">
+              <h3><%= petsitter.first_name %> <%= petsitter.last_name %></h3>
+              <p id="mini-description"><%=petsitter.description%></p>
+              <p>From <em id="rate"><%= rand(10..30)%>$</em> per hour</p>
+            </div>
+          </div>
+        <% end%>
+      <% end%>
+    </div>
+<!-- End of Petsitter Results -->
+<!-- Map -->
+    <div class = "map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
   </div>
 </div>
+<!-- End of Map -->
