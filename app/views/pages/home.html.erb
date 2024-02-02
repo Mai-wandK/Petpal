@@ -8,7 +8,9 @@
 </div>
 
 <div class="yellow-banner card-heading-hp">
-  <h3>Meet some of our recent sitters</h3>
+
+  <h2 style="font-weight:bold;">Meet some of our recent sitters</h2>
+
 </div>
 
 <div class="flex-box box-hm-pg">
@@ -21,26 +23,24 @@
           </div>
         <div class="bnow-btn">
 
-          <%= link_to 'Book Now', petsitter_path(petsitter.id), class: "btn btn-success" %>
+          <%= link_to 'More info', petsitter_path(petsitter.id), class: "btn btn-success" %>
+
         </div>
 
     </div>
   <% end %>
 </div>
 
-<div>
-  <%= link_to "Explore all petsitters", petsitters_path, class: "btn btn-primary"%>
-</div>
-
-
 <div class="yellow-banner card-heading-hp">
-  <h3>See what Petpal offers</h3>
-</div>
 
+<h2 style="font-weight: bold">See what PetPal offers</h2>
+
+</div>
 
 <div class="card-group service-hp">
   <div class="card">
-    <%= image_tag "s1.png", width: 200, class:"card-img-top service-pic" %>
+
+    <%= image_tag "s1.png", width: 200, class:"card-img-top" %>
 
     <div class="card-body">
       <h5 class="card-title">Explore the PetPal Experience</h5>
@@ -63,11 +63,9 @@
   </div>
 </div>
 
-
 <div class="yellow-banner card-heading-hp">
-  <h3>Hear it from PetPal users</h3>
+  <h style="font-weight: bold">Hear it from PetPal users</h2>
 </div>
-
 
 <div class="card-group review-petpal">
   <div class="card review-homepage">
