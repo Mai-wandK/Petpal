@@ -125,10 +125,21 @@
     margin: 0 auto;
   }
 
-
-
   .service-hp{
     margin: 0 300px;
+  }
+
+  .review-homepage {
+    width: 200px; /* Set the width as needed */
+    padding: 20px; /* Set the padding as needed */
+    margin: 20px; /* Set the margin as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+  }
+
+  .review-petpal{
+    margin-bottom: 20px;
   }
 
 .booking-form{
