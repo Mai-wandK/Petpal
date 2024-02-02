@@ -2,6 +2,10 @@
   background-color: $pp-purple;
 }
 
+.btn {
+  font-family: 'Sniglet';
+}
+
 .large-button {
   background-color: $pp-purple;
   border-radius: 30px;
@@ -11,10 +15,20 @@
   font-weight: bold;
   margin: 18px auto;
   align-items: center;
+  font-family: 'Sniglet';
 
   &:hover {
     background-color: darken($pp-purple, 10%);
   }
+}
 
+.btn-success {
+  background-color: $pp-teal;
+  color: white;
+  font-family: 'Sniglet';
 
+  &:hover {
+    background-color: darken($pp-teal, 10%);
+    color: white;
+  }
 }
